@@ -183,4 +183,5 @@ public class MinesweeperGame {
         open(row + 1, col);
         open(row + 1, col + 1);
     }
+    
 }
