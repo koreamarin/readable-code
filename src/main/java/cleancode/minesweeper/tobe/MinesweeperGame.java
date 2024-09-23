@@ -23,6 +23,7 @@ public class MinesweeperGame {
 
     public static void main(String[] args) {
         showGameStartComments();
+
         initializeGame();
 
         while (true) {
