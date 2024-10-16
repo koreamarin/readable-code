@@ -6,16 +6,16 @@ import java.util.List;
 
 public class CellSignFinder {
 
-    public String findCellSignFrom(CellSnapshot snapshot) {
-        List<CellSignProvidable> cellSignProviders = List.of(
-                new EmptyCellSignProvider(),
-                new FlagCellSignProvider(),
-                new LandMineCellSignProvider(),
-                new NumberCellSignProvider(),
-                new UncheckedCellSignProvider()
-        );
+    public static final List<CellSignProvidable> CELL_SIGN_PROVIDERS = List.of(
+            new EmptyCellSignProvider(),
+            new FlagCellSignProvider(),
+            new LandMineCellSignProvider(),
+            new NumberCellSignProvider(),
+            new UncheckedCellSignProvider()
+    );
 
-        return cellSignProviders.stream()
+    public String findCellSignFrom(CellSnapshot snapshot) {
+        return CELL_SIGN_PROVIDERS.stream()
                 .filter(provider -> provider.supports(snapshot))
                 .findFirst()
                 .map(provider -> provider.provide(snapshot))

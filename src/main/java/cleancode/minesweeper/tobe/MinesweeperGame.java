@@ -1,5 +1,7 @@
 package cleancode.minesweeper.tobe;
 
+import cleancode.studycafe.tobe.exception.AppException;
+
 import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
